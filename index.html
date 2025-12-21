@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ballesteros Smart Solutions S.A.S | Soluciones Tecnológicas</title>
+    <meta
+      name="description"
+      content="Ballesteros Smart Solutions S.A.S: desarrollo de software, automatización, sistemas web, APIs, DevOps y soluciones tecnológicas para empresas."
+    />
+    <meta name="theme-color" content="#0b1220" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root{
+        --bg: #070b14;
+        --bg2:#0b1220;
+        --card:#0f1b33;
+        --card2:#0d172d;
+        --text:#e8eefc;
+        --muted:#a8b3d6;
+        --muted2:#7f8bb3;
+        --line: rgba(255,255,255,.08);
+        --glow: rgba(120, 80, 255, .45);
+        --glow2: rgba(0, 210, 255, .35);
+        --brand:#7c5cff;
+        --brand2:#00d2ff;
+        --ok:#22c55e;
+        --warn:#f59e0b;
+        --radius: 18px;
+        --shadow: 0 20px 60px rgba(0,0,0,.45);
+      }
+
+      *{box-sizing:border-box}
+      html,body{height:100%}
+      body{
+        margin:0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.22), transparent 60%),
+                    radial-gradient(900px 600px at 80% 0%, rgba(0,210,255,.16), transparent 55%),
+                    radial-gradient(700px 500px at 70% 85%, rgba(124,92,255,.14), transparent 55%),
+                    linear-gradient(180deg, var(--bg), var(--bg2));
+        color:var(--text);
+        overflow-x:hidden;
+      }
+
+      a{color:inherit;text-decoration:none}
+      .container{width:min(1120px, 92%); margin:0 auto}
+      .pill{
+        display:inline-flex; align-items:center; gap:.55rem;
+        border:1px solid var(--line);
+        background: rgba(255,255,255,.04);
+        padding:.5rem .75rem;
+        border-radius: 999px;
+        color: var(--muted);
+        backdrop-filter: blur(10px);
+      }
+      .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow:0 0 18px var(--glow2)}
+      .btn{
+        display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+        padding:.95rem 1.1rem;
+        border-radius: 12px;
+        border:1px solid var(--line);
+        background: rgba(255,255,255,.04);
+        color:var(--text);
+        transition: transform .18s ease, background .18s ease, border-color .18s ease;
+        cursor:pointer;
+        user-select:none;
+      }
+      .btn:hover{transform: translateY(-2px); background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.16)}
+      .btn.primary{
+        border: none;
+        background: linear-gradient(135deg, var(--brand), var(--brand2));
+        box-shadow: 0 18px 50px rgba(124,92,255,.28), 0 18px 50px rgba(0,210,255,.18);
+      }
+      .btn.primary:hover{transform: translateY(-2px) scale(1.01)}
+      .btn.ghost{background: transparent}
+      .chip{
+        display:inline-flex; align-items:center; gap:.5rem;
+        padding:.45rem .7rem;
+        border-radius: 999px;
+        border:1px solid var(--line);
+        background: rgba(255,255,255,.03);
+        color: var(--muted);
+        font-size:.9rem;
+      }
+
+      /* Navbar */
+      .nav{
+        position: sticky;
+        top:0;
+        z-index:20;
+        background: rgba(7,11,20,.55);
+        border-bottom:1px solid var(--line);
+        backdrop-filter: blur(14px);
+      }
+      .navwrap{display:flex; align-items:center; justify-content:space-between; padding:.85rem 0}
+      .brand{
+        display:flex; align-items:center; gap:.8rem;
+        font-weight:800;
+        letter-spacing: .2px;
+      }
+      .logo{
+        width:40px;height:40px;border-radius:14px;
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 60%),
+                    linear-gradient(135deg, var(--brand), var(--brand2));
+        box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 18px 40px rgba(124,92,255,.22);
+      }
+      .navlinks{
+        display:flex; gap:1rem; align-items:center;
+        color: var(--muted);
+        font-weight:600;
+      }
+      .navlinks a{padding:.55rem .7rem;border-radius:10px}
+      .navlinks a:hover{background: rgba(255,255,255,.05); color:var(--text)}
+      .navcta{display:flex; gap:.7rem; align-items:center}
+
+      /* Hero */
+      .hero{padding: 5.3rem 0 3.8rem}
+      .herogrid{
+        display:grid;
+        grid-template-columns: 1.15fr .85fr;
+        gap: 2rem;
+        align-items: center;
+      }
+      .h1{
+        font-size: clamp(2.1rem, 4vw, 3.35rem);
+        line-height:1.05;
+        margin: 1rem 0;
+        letter-spacing: -.8px;
+      }
+      .sub{
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.6;
+        max-width: 58ch;
+      }
+      .ctaRow{display:flex; gap:.85rem; flex-wrap:wrap; margin-top: 1.35rem}
+      .stats{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .9rem;
+        margin-top: 1.6rem;
+      }
+      .stat{
+        border:1px solid var(--line);
+        background: rgba(255,255,255,.03);
+        border-radius: var(--radius);
+        padding: 1rem;
+      }
+      .stat b{display:block; font-size:1.15rem}
+      .stat span{color:var(--muted2); font-size:.92rem}
+      .heroCard{
+        border:1px solid var(--line);
+        border-radius: 22px;
+        background:
+          radial-gradient(600px 250px at 30% 0%, rgba(124,92,255,.22), transparent 55%),
+          radial-gradient(600px 250px at 70% 15%, rgba(0,210,255,.16), transparent 50%),
+          linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+        box-shadow: var(--shadow);
+        padding: 1.15rem;
+        position: relative;
+        overflow:hidden;
+      }
+      .heroCard::after{
+        content:"";
+        position:absolute; inset:-2px;
+        background: radial-gradient(400px 220px at 20% 30%, rgba(124,92,255,.18), transparent 60%),
+                    radial-gradient(500px 250px at 80% 20%, rgba(0,210,255,.12), transparent 60%);
+        filter: blur(20px);
+        opacity:.9;
+        pointer-events:none;
+      }
+      .heroCardInner{
+        position:relative; z-index:1;
+        border:1px solid rgba(255,255,255,.08);
+        border-radius: 18px;
+        background: rgba(10,16,30,.55);
+        padding: 1rem;
+      }
+      .codeHeader{
+        display:flex; align-items:center; justify-content:space-between;
+        gap:.75rem;
+        margin-bottom: .75rem;
+      }
+      .traffic{display:flex; gap:.45rem; align-items:center}
+      .t{width:10px;height:10px;border-radius:999px;opacity:.85}
+      .t.red{background:#ff5f57}
+      .t.yel{background:#febc2e}
+      .t.grn{background:#28c840}
+      .tag{
+        font-size:.85rem;
+        color: var(--muted);
+        border:1px solid rgba(255,255,255,.10);
+        border-radius:999px;
+        padding:.35rem .6rem;
+        background: rgba(255,255,255,.03);
+      }
+      pre{
+        margin:0;
+        white-space:pre-wrap;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: .92rem;
+        line-height: 1.55;
+        color: #dfe7ff;
+      }
+      .kw{color:#7c5cff}
+      .fn{color:#00d2ff}
+      .cm{color:#93a4d8}
+      .st{color:#22c55e}
+
+      /* Sections */
+      section{padding: 3.7rem 0}
+      .sectionHead{
+        display:flex; align-items:flex-end; justify-content:space-between; gap:1rem;
+        margin-bottom: 1.6rem;
+      }
+      .sectionHead h2{
+        margin:0;
+        font-size: 2rem;
+        letter-spacing:-.5px;
+      }
+      .sectionHead p{margin:0;color:var(--muted); max-width: 62ch; line-height:1.6}
+      .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem}
+      .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:1rem}
+
+      .card{
+        border:1px solid var(--line);
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        padding: 1.2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,.25);
+        transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      }
+      .card:hover{transform: translateY(-3px); border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+      .icon{
+        width:46px;height:46px;border-radius:16px;
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 60%),
+                    linear-gradient(135deg, rgba(124,92,255,.22), rgba(0,210,255,.18));
+        border: 1px solid rgba(255,255,255,.10);
+        display:grid; place-items:center;
+        margin-bottom: .9rem;
+      }
+      .icon svg{opacity:.95}
+      .card h3{margin:.2rem 0 .55rem; font-size:1.12rem}
+      .card p{margin:0;color:var(--muted); line-height:1.6}
+      .bullets{margin:.75rem 0 0; padding:0; list-style:none; color: var(--muted)}
+      .bullets li{margin:.35rem 0; display:flex; gap:.5rem}
+      .check{color: var(--ok)}
+
+      /* Process */
+      .step{
+        display:flex; gap: .9rem; align-items:flex-start;
+      }
+      .num{
+        width:34px;height:34px;border-radius:12px;
+        display:grid; place-items:center;
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(255,255,255,.04);
+        font-weight:800;
+        color:#e9eeff;
+      }
+
+      /* Portfolio */
+      .caseTitle{display:flex; justify-content:space-between; gap:1rem; align-items:center}
+      .badge{
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(255,255,255,.03);
+        padding:.35rem .55rem;
+        border-radius: 999px;
+        font-size:.85rem;
+        color: var(--muted);
+      }
+
+      /* Contact */
+      .contact{
+        border:1px solid var(--line);
+        border-radius: 24px;
+        background:
+          radial-gradient(700px 300px at 10% 10%, rgba(124,92,255,.20), transparent 55%),
+          radial-gradient(700px 300px at 90% 0%, rgba(0,210,255,.14), transparent 55%),
+          linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        box-shadow: var(--shadow);
+        padding: 1.25rem;
+      }
+      form{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .85rem;
+        margin-top: .9rem;
+      }
+      .field{display:flex; flex-direction:column; gap:.35rem}
+      label{font-size:.9rem;color:var(--muted)}
+      input, textarea{
+        width:100%;
+        padding:.9rem .95rem;
+        border-radius: 14px;
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(7,11,20,.55);
+        color: var(--text);
+        outline:none;
+      }
+      input:focus, textarea:focus{border-color: rgba(124,92,255,.45); box-shadow: 0 0 0 4px rgba(124,92,255,.12)}
+      textarea{grid-column: 1 / -1; min-height: 120px; resize: vertical}
+      .formActions{grid-column: 1 / -1; display:flex; gap:.75rem; flex-wrap:wrap; align-items:center}
+
+      footer{
+        padding: 2rem 0 2.6rem;
+        color: var(--muted2);
+        border-top:1px solid var(--line);
+      }
+      .footgrid{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center}
+      .small{font-size:.92rem}
+
+      /* Responsive */
+      @media (max-width: 980px){
+        .herogrid{grid-template-columns: 1fr; gap:1.4rem}
+        .stats{grid-template-columns: 1fr; }
+        .grid3{grid-template-columns: 1fr}
+        .grid2{grid-template-columns: 1fr}
+        form{grid-template-columns: 1fr}
+        .navlinks{display:none}
+      }
+
+      /* Reveal animations */
+      .reveal{opacity:0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease}
+      .reveal.show{opacity:1; transform:none}
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="nav">
+      <div class="container navwrap">
+        <a class="brand" href="#top" aria-label="Ir al inicio">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Ballesteros Smart Solutions <span style="color:var(--muted)">S.A.S</span></span>
+        </a>
+
+        <nav class="navlinks" aria-label="Navegación principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#tecnologias">Tecnologías</a>
+          <a href="#casos">Casos</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="navcta">
+          <!-- NUEVO: Botón de correo directo -->
+          <a class="btn" href="mailto:ballesterossmartsolutionssas@gmail.com">Correo</a>
+
+          <a class="btn ghost" href="#casos">Ver portafolio</a>
+          <a class="btn primary" href="#contacto">Cotizar</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main id="top" class="hero">
+      <div class="container herogrid">
+        <div class="reveal">
+          <span class="pill"><span class="dot"></span> Desarrollo de software • Automatización • DevOps</span>
+          <h1 class="h1">
+            Construimos soluciones tecnológicas
+            <span style="background:linear-gradient(135deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent;">
+              a la medida
+            </span>
+            para empresas que quieren crecer.
+          </h1>
+          <p class="sub">
+            En <b>Ballesteros Smart Solutions S.A.S</b> convertimos necesidades del negocio en sistemas confiables:
+            plataformas web, APIs, automatización de procesos, integraciones y despliegues con buenas prácticas.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="#contacto">Hablemos de tu proyecto</a>
+            <a class="btn" href="#servicios">Explorar servicios</a>
+            <a class="btn ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub (opcional)</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <b>Arquitectura limpia</b>
+              <span>Escalable, mantenible y documentada.</span>
+            </div>
+            <div class="stat">
+              <b>Entrega rápida</b>
+              <span>MVPs, iteraciones y mejoras continuas.</span>
+            </div>
+            <div class="stat">
+              <b>Seguridad & calidad</b>
+              <span>Buenas prácticas + pruebas + monitoreo.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code-like card -->
+        <aside class="heroCard reveal" aria-label="Vista previa técnica">
+          <div class="heroCardInner">
+            <div class="codeHeader">
+              <div class="traffic" aria-hidden="true">
+                <span class="t red"></span><span class="t yel"></span><span class="t grn"></span>
+              </div>
+              <span class="tag">ballesterossmartsolutionssas / solutions</span>
+            </div>
+            <pre aria-label="Código decorativo">
+<span class="cm">// We build systems that ship.</span>
+<span class="kw">const</span> <span class="fn">stack</span> = [<span class="st">"Web"</span>, <span class="st">"API"</span>, <span class="st">"Automation"</span>, <span class="st">"DevOps"</span>];
+
+<span class="kw">function</span> <span class="fn">deliver</span>(need){
+  <span class="kw">return</span> {
+    discovery: <span class="st">"Requerimientos claros"</span>,
+    build: <span class="st">"Desarrollo + pruebas"</span>,
+    deploy: <span class="st">"CI/CD + monitoreo"</span>,
+    result: <span class="st">"Impacto en negocio"</span>
+  };
+}
+            </pre>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Services -->
+    <section id="servicios">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <div>
+            <h2>Servicios</h2>
+            <p>
+              Elegimos la tecnología según el problema. Nuestro foco es entregar valor: sistemas estables, rápidos y fáciles de operar.
+            </p>
+          </div>
+          <div style="display:flex; gap:.6rem; flex-wrap:wrap;">
+            <span class="chip">⚙️ Automatización</span>
+            <span class="chip">🧩 Integraciones</span>
+            <span class="chip">🚀 Despliegue</span>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M8 17l-3-3 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 7l3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 4l-4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Desarrollo Web & Sistemas</h3>
+            <p>Plataformas modernas para operación interna o clientes: paneles, módulos, roles, reportes y formularios.</p>
+            <ul class="bullets">
+              <li><span class="check">✓</span> Next.js / React / Tailwind</li>
+              <li><span class="check">✓</span> UX limpio + responsive</li>
+              <li><span class="check">✓</span> Módulos por etapas</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M8 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>APIs, Backends & Datos</h3>
+            <p>Servicios backend robustos con autenticación, validaciones, documentación y diseño escalable.</p>
+            <ul class="bullets">
+              <li><span class="check">✓</span> Spring Boot / Node</li>
+              <li><span class="check">✓</span> MongoDB / SQL</li>
+              <li><span class="check">✓</span> Swagger + pruebas</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 18v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4.93 4.93l2.83 2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16.24 16.24l2.83 2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M2 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M18 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4.93 19.07l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Automatización & DevOps</h3>
+            <p>CI/CD, contenedores, monitoreo y despliegues para que tu software “viva” bien en producción.</p>
+            <ul class="bullets">
+              <li><span class="check">✓</span> Docker / GitHub Actions</li>
+              <li><span class="check">✓</span> Logs + métricas</li>
+              <li><span class="check">✓</span> Blue/Green / Rolling</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="proceso">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <div>
+            <h2>Cómo trabajamos</h2>
+            <p>
+              Un proceso claro evita reprocesos. Priorizamos comunicación, entregas rápidas y documentación.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card reveal">
+            <div class="step">
+              <div class="num">1</div>
+              <div>
+                <h3>Descubrimiento</h3>
+                <p>Levantamos requerimientos, objetivos, usuarios y flujo. Definimos alcance y entregables.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="step">
+              <div class="num">2</div>
+              <div>
+                <h3>Diseño & arquitectura</h3>
+                <p>Proponemos estructura de módulos, datos, roles, integraciones y estándares de calidad.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="step">
+              <div class="num">3</div>
+              <div>
+                <h3>Construcción iterativa</h3>
+                <p>Entregamos por etapas (MVP → mejoras), con pruebas, revisiones y feedback rápido.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="step">
+              <div class="num">4</div>
+              <div>
+                <h3>Despliegue & soporte</h3>
+                <p>Publicación con CI/CD, monitoreo básico y acompañamiento para operación estable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech -->
+    <section id="tecnologias">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <div>
+            <h2>Tecnologías</h2>
+            <p>Stack moderno, probado y flexible. Elegimos lo que mejor se ajuste a tu caso.</p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div style="display:flex; flex-wrap:wrap; gap:.6rem;">
+            <span class="chip">Java 21</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">React</span>
+            <span class="chip">Tailwind</span>
+            <span class="chip">Docker</span>
+            <span class="chip">GitHub Actions</span>
+            <span class="chip">Nginx</span>
+            <span class="chip">Prometheus / Grafana</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio / Cases -->
+    <section id="casos">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <div>
+            <h2>Casos y soluciones</h2>
+            <p>Ejemplos de lo que podemos construir (puedes reemplazar por proyectos reales de ustedes).</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <article class="card reveal">
+            <div class="caseTitle">
+              <h3 style="margin:.2rem 0;">Sistema de gestión interna</h3>
+              <span class="badge">Web App</span>
+            </div>
+            <p>Roles, módulos, generación de documentos, trazabilidad y paneles para operación diaria.</p>
+            <ul class="bullets">
+              <li><span class="check">✓</span> Permisos por usuario</li>
+              <li><span class="check">✓</span> Reportes exportables</li>
+              <li><span class="check">✓</span> Auditoría básica</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="caseTitle">
+              <h3 style="margin:.2rem 0;">Automatización de procesos</h3>
+              <span class="badge">RPA / Scripts</span>
+            </div>
+            <p>Reducción de tareas repetitivas: cargas, validaciones, notificaciones y flujos.</p>
+            <ul class="bullets">
+              <li><span class="check">✓</span> Integración con correo</li>
+              <li><span class="check">✓</span> Plantillas y PDF</li>
+              <li><span class="check">✓</span> Logs de ejecución</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="caseTitle">
+              <h3 style="margin:.2rem 0;">API + Integraciones</h3>
+              <span class="badge">Backend</span>
+            </div>
+            <p>APIs con autenticación, documentación, métricas y despliegue listo para producción.</p>
+            <ul class="bullets">
+              <li><span class="check">✓</span> JWT / roles</li>
+              <li><span class="check">✓</span> Swagger</li>
+              <li><span class="check">✓</span> CI/CD</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+      <div class="container">
+        <div class="sectionHead reveal">
+          <div>
+            <h2>Lo que valoran nuestros clientes</h2>
+            <p>Si todavía no tienen testimonios, déjalo así por ahora o cámbialo por “Resultados”.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="card reveal">
+            <h3>Comunicación clara</h3>
+            <p>“Nos explicaron todo el proceso y entregaron por etapas sin enredos.”</p>
+            <p class="small" style="color:var(--muted2); margin-top:.85rem;">— Cliente (ejemplo)</p>
+          </div>
+          <div class="card reveal">
+            <h3>Entrega rápida</h3>
+            <p>“En poco tiempo ya teníamos un MVP funcional para operar.”</p>
+            <p class="small" style="color:var(--muted2); margin-top:.85rem;">— Cliente (ejemplo)</p>
+          </div>
+          <div class="card reveal">
+            <h3>Calidad técnica</h3>
+            <p>“Se nota que aplican buenas prácticas, el sistema quedó estable.”</p>
+            <p class="small" style="color:var(--muted2); margin-top:.85rem;">— Cliente (ejemplo)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto">
+      <div class="container">
+        <div class="sectionHead reveal">
+          <div>
+            <h2>Contacto</h2>
+            <p>Cuéntanos qué necesitas y te respondemos con una propuesta clara (alcance, tiempos y costo).</p>
+          </div>
+        </div>
+
+        <div class="contact reveal">
+          <div style="display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+            <div>
+              <span class="pill"><span class="dot"></span> Respuesta rápida • Cotización sin vueltas</span>
+              <p style="margin:.6rem 0 0; color:var(--muted);">
+                Email:
+                <b><a href="mailto:ballesterossmartsolutionssas@gmail.com">ballesterossmartsolutionssas@gmail.com</a></b>
+                • WhatsApp: <b>+57 300 000 0000</b>
+              </p>
+            </div>
+            <a class="btn primary" id="btnWhatsapp" href="#" target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+          </div>
+
+          <form id="contactForm">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" placeholder="Tu nombre" required />
+            </div>
+            <div class="field">
+              <label for="company">Empresa</label>
+              <input id="company" name="company" placeholder="Nombre de la empresa" />
+            </div>
+            <div class="field">
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" placeholder="tu@correo.com" required />
+            </div>
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" placeholder="+57..." />
+            </div>
+
+            <div class="field" style="grid-column:1/-1;">
+              <label for="message">¿Qué necesitas?</label>
+              <textarea id="message" name="message" placeholder="Ej: necesito un sistema web con roles, módulo de facturación, reportes y despliegue..." required></textarea>
+            </div>
+
+            <div class="formActions">
+              <button class="btn primary" type="submit">Enviar</button>
+              <button class="btn" type="button" id="btnMailto">Enviar por correo</button>
+              <span class="small" style="color:var(--muted2);">*Este formulario abre WhatsApp / correo (sin backend).</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footgrid">
+        <div class="brand">
+          <span class="logo" aria-hidden="true"></span>
+          <div>
+            <div style="font-weight:800;color:var(--text)">Ballesteros Smart Solutions S.A.S</div>
+            <div class="small">Soluciones tecnológicas para empresas • Jamundí / Cali • Colombia</div>
+          </div>
+        </div>
+
+        <div class="small">
+          © <span id="year"></span> Ballesteros Smart Solutions S.A.S • Hecho con ☕ y código.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ======= Configura aquí tus datos =======
+      const WHATSAPP_NUMBER = "573000000000"; // <-- Cambia: +57 300 000 0000 => "573000000000"
+      const EMAIL_TO = "ballesterossmartsolutionssas@gmail.com"; // ✅ CAMBIO: correo real
+      const COMPANY_NAME = "Ballesteros Smart Solutions S.A.S";
+
+      // ======= Helpers =======
+      const $ = (q) => document.querySelector(q);
+
+      function buildWhatsappLink(text) {
+        const base = "https://wa.me/" + WHATSAPP_NUMBER;
+        return base + "?text=" + encodeURIComponent(text);
+      }
+
+      // Year
+      $("#year").textContent = new Date().getFullYear();
+
+      // Reveal on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("show");
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      // WhatsApp button
+      const btnWhatsapp = $("#btnWhatsapp");
+      btnWhatsapp.href = buildWhatsappLink("Hola, estoy interesado en una solución tecnológica con " + COMPANY_NAME + ".");
+
+      // Contact form => WhatsApp
+      $("#contactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        const payload = {
+          name: data.get("name") || "",
+          company: data.get("company") || "",
+          email: data.get("email") || "",
+          phone: data.get("phone") || "",
+          message: data.get("message") || "",
+        };
+
+        const text =
+`Hola, soy ${payload.name}${payload.company ? " de " + payload.company : ""}.
+Correo: ${payload.email}${payload.phone ? "\nTeléfono: " + payload.phone : ""}
+
+Necesidad:
+${payload.message}
+
+¿Me pueden ayudar con una cotización?`;
+
+        window.open(buildWhatsappLink(text), "_blank");
+      });
+
+      // Mailto (sin backend)
+      $("#btnMailto").addEventListener("click", () => {
+        const name = $("#name").value.trim();
+        const company = $("#company").value.trim();
+        const email = $("#email").value.trim();
+        const phone = $("#phone").value.trim();
+        const msg = $("#message").value.trim();
+
+        const subject = `Cotización / ${COMPANY_NAME}`;
+        const body =
+`Hola, soy ${name}${company ? " de " + company : ""}.
+Correo: ${email}${phone ? "\nTeléfono: " + phone : ""}
+
+Necesidad:
+${msg}
+
+Quedo atento.`;
+
+        const mailto = `mailto:${EMAIL_TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      });
+    </script>
+  </body>
+</html>
