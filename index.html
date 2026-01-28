@@ -8,7 +8,7 @@
       name="description"
       content="Ballesteros Smart Solutions S.A.S crea sitios web profesionales con enfoque en resultados: diseño UX, velocidad, SEO, automatización y tecnología moderna."
     />
-    <meta name="theme-color" content="#f6f4ef" />
+    <meta name="theme-color" content="#0b111a" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,20 +19,20 @@
 
     <style>
       :root {
-        --bg: #f6f4ef;
-        --bg2: #ffffff;
-        --ink: #111827;
-        --muted: #4b5563;
-        --muted2: #6b7280;
-        --line: rgba(17, 24, 39, 0.12);
-        --brand: #0ea5a4;
-        --brand2: #f97316;
-        --brand3: #1d4ed8;
-        --card: #ffffff;
-        --soft: #f2efe8;
-        --ok: #16a34a;
+        --bg: #080b11;
+        --bg2: #0b111a;
+        --ink: #f4f6fb;
+        --muted: #b3bacb;
+        --muted2: #8e97ad;
+        --line: rgba(255, 255, 255, 0.08);
+        --brand: #d6a63a;
+        --brand2: #1fa8ff;
+        --brand3: #6f7b94;
+        --card: #0f141d;
+        --soft: #111827;
+        --ok: #22c55e;
         --radius: 18px;
-        --shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
+        --shadow: 0 30px 70px rgba(2, 6, 23, 0.55);
       }
 
       * {
@@ -46,9 +46,9 @@
         margin: 0;
         font-family: "Manrope", "Segoe UI", sans-serif;
         color: var(--ink);
-        background: radial-gradient(900px 550px at 10% 0%, rgba(14, 165, 164, 0.12), transparent 60%),
-          radial-gradient(800px 520px at 90% 10%, rgba(249, 115, 22, 0.12), transparent 55%),
-          linear-gradient(180deg, #f6f4ef, #ffffff 35%, #f7f6f3 100%);
+        background: radial-gradient(900px 550px at 10% 0%, rgba(214, 166, 58, 0.18), transparent 60%),
+          radial-gradient(900px 520px at 90% 10%, rgba(31, 168, 255, 0.18), transparent 55%),
+          linear-gradient(180deg, var(--bg), var(--bg2) 45%, #070a0f 100%);
         overflow-x: hidden;
       }
 
@@ -74,26 +74,26 @@
         position: absolute;
         border-radius: 999px;
         filter: blur(0px);
-        opacity: 0.5;
+        opacity: 0.55;
       }
       .orb.one {
         width: 320px;
         height: 320px;
-        background: radial-gradient(circle at 30% 30%, rgba(14, 165, 164, 0.35), transparent 60%);
+        background: radial-gradient(circle at 30% 30%, rgba(214, 166, 58, 0.38), transparent 60%);
         top: -80px;
         left: -80px;
       }
       .orb.two {
         width: 420px;
         height: 420px;
-        background: radial-gradient(circle at 40% 40%, rgba(249, 115, 22, 0.28), transparent 62%);
+        background: radial-gradient(circle at 40% 40%, rgba(31, 168, 255, 0.3), transparent 62%);
         top: -120px;
         right: -120px;
       }
       .orb.three {
         width: 360px;
         height: 360px;
-        background: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.18), transparent 65%);
+        background: radial-gradient(circle at 50% 50%, rgba(214, 166, 58, 0.16), transparent 65%);
         bottom: -140px;
         left: 15%;
       }
@@ -103,7 +103,7 @@
         align-items: center;
         gap: 0.55rem;
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(7, 10, 15, 0.7);
         padding: 0.45rem 0.8rem;
         border-radius: 999px;
         color: var(--muted);
@@ -124,21 +124,21 @@
         padding: 0.9rem 1.2rem;
         border-radius: 12px;
         border: 1px solid var(--line);
-        background: #fff;
+        background: rgba(255, 255, 255, 0.04);
         color: var(--ink);
         font-weight: 600;
         transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
       }
       .btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-        border-color: rgba(15, 23, 42, 0.2);
+        box-shadow: 0 16px 32px rgba(2, 6, 23, 0.45);
+        border-color: rgba(255, 255, 255, 0.18);
       }
       .btn.primary {
         border: none;
         color: #fff;
         background: linear-gradient(135deg, var(--brand), var(--brand2));
-        box-shadow: 0 16px 30px rgba(14, 165, 164, 0.22), 0 16px 30px rgba(249, 115, 22, 0.22);
+        box-shadow: 0 18px 40px rgba(214, 166, 58, 0.35), 0 18px 40px rgba(31, 168, 255, 0.3);
       }
       .btn.ghost {
         background: transparent;
@@ -150,7 +150,7 @@
         padding: 0.45rem 0.7rem;
         border-radius: 999px;
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.05);
         color: var(--muted);
         font-size: 0.9rem;
         font-weight: 600;
@@ -160,7 +160,7 @@
         position: sticky;
         top: 0;
         z-index: 20;
-        background: rgba(246, 244, 239, 0.88);
+        background: rgba(8, 11, 17, 0.82);
         border-bottom: 1px solid var(--line);
         backdrop-filter: blur(12px);
       }
@@ -182,7 +182,14 @@
         height: 42px;
         border-radius: 14px;
         background: linear-gradient(135deg, var(--brand), var(--brand2));
-        box-shadow: 0 16px 30px rgba(14, 165, 164, 0.22);
+        box-shadow: 0 16px 30px rgba(214, 166, 58, 0.25);
+      }
+      .logoImg {
+        height: 72px;
+        width: auto;
+        max-width: 280px;
+        object-fit: contain;
+        filter: drop-shadow(0 8px 18px rgba(214, 166, 58, 0.3));
       }
       .navlinks {
         display: flex;
@@ -196,7 +203,7 @@
         border-radius: 10px;
       }
       .navlinks a:hover {
-        background: rgba(15, 23, 42, 0.06);
+        background: rgba(255, 255, 255, 0.08);
         color: var(--ink);
       }
       .navcta {
@@ -241,7 +248,7 @@
       }
       .highlight {
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(13, 18, 26, 0.9);
         border-radius: var(--radius);
         padding: 0.95rem;
       }
@@ -258,7 +265,7 @@
       .heroCard {
         border: 1px solid var(--line);
         border-radius: 24px;
-        background: #fff;
+        background: #0b111a;
         box-shadow: var(--shadow);
         padding: 1.2rem;
         position: relative;
@@ -268,8 +275,8 @@
         content: "";
         position: absolute;
         inset: -2px;
-        background: radial-gradient(300px 200px at 15% 10%, rgba(14, 165, 164, 0.18), transparent 60%),
-          radial-gradient(320px 200px at 80% 15%, rgba(249, 115, 22, 0.2), transparent 60%);
+        background: radial-gradient(300px 200px at 15% 10%, rgba(214, 166, 58, 0.2), transparent 60%),
+          radial-gradient(320px 200px at 80% 15%, rgba(31, 168, 255, 0.22), transparent 60%);
         opacity: 0.7;
         pointer-events: none;
       }
@@ -277,8 +284,8 @@
         position: relative;
         z-index: 1;
         border-radius: 18px;
-        background: rgba(255, 255, 255, 0.95);
-        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: rgba(12, 18, 28, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.06);
         padding: 1rem;
       }
       .cardHeader {
@@ -310,10 +317,10 @@
       .tag {
         font-size: 0.85rem;
         color: var(--muted2);
-        border: 1px solid rgba(15, 23, 42, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 999px;
         padding: 0.35rem 0.6rem;
-        background: rgba(249, 250, 251, 0.95);
+        background: rgba(255, 255, 255, 0.04);
       }
       .kpis {
         display: grid;
@@ -321,10 +328,10 @@
         gap: 0.6rem;
       }
       .kpi {
-        border: 1px solid rgba(15, 23, 42, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 14px;
         padding: 0.7rem;
-        background: #fff;
+        background: rgba(9, 13, 20, 0.9);
       }
       .kpi span {
         display: block;
@@ -340,22 +347,22 @@
       }
       .miniSite {
         margin-top: 1rem;
-        border: 1px solid rgba(15, 23, 42, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 16px;
-        background: linear-gradient(135deg, rgba(14, 165, 164, 0.08), rgba(249, 115, 22, 0.08));
+        background: linear-gradient(135deg, rgba(214, 166, 58, 0.12), rgba(31, 168, 255, 0.12));
         padding: 0.8rem;
       }
       .miniSite .bar {
         height: 8px;
         border-radius: 999px;
-        background: rgba(15, 23, 42, 0.12);
+        background: rgba(255, 255, 255, 0.12);
         margin-bottom: 0.6rem;
       }
       .miniSite .block {
         height: 54px;
         border-radius: 12px;
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: rgba(9, 13, 20, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         margin-bottom: 0.6rem;
       }
       .miniSite .grid {
@@ -366,8 +373,8 @@
       .miniSite .tile {
         height: 42px;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: rgba(9, 13, 20, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       section {
@@ -406,21 +413,21 @@
       .card {
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        background: #fff;
+        background: linear-gradient(180deg, rgba(15, 20, 29, 0.95), rgba(9, 13, 20, 0.95));
         padding: 1.2rem;
-        box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+        box-shadow: 0 18px 34px rgba(2, 6, 23, 0.45);
         transition: transform 0.18s ease, border-color 0.18s ease;
       }
       .card:hover {
         transform: translateY(-3px);
-        border-color: rgba(15, 23, 42, 0.2);
+        border-color: rgba(255, 255, 255, 0.2);
       }
       .icon {
         width: 46px;
         height: 46px;
         border-radius: 16px;
-        background: linear-gradient(135deg, rgba(14, 165, 164, 0.2), rgba(249, 115, 22, 0.2));
-        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: linear-gradient(135deg, rgba(214, 166, 58, 0.2), rgba(31, 168, 255, 0.2));
+        border: 1px solid rgba(255, 255, 255, 0.08);
         display: grid;
         place-items: center;
         margin-bottom: 0.9rem;
@@ -457,10 +464,10 @@
         gap: 0.8rem;
       }
       .impact {
-        border: 1px dashed rgba(15, 23, 42, 0.2);
+        border: 1px dashed rgba(255, 255, 255, 0.2);
         border-radius: 16px;
         padding: 0.8rem;
-        background: #fffdf9;
+        background: rgba(13, 18, 26, 0.9);
       }
       .impact b {
         font-size: 1.3rem;
@@ -482,8 +489,8 @@
         border-radius: 12px;
         display: grid;
         place-items: center;
-        border: 1px solid rgba(15, 23, 42, 0.12);
-        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(8, 12, 18, 0.9);
         font-weight: 800;
       }
 
@@ -494,8 +501,8 @@
         align-items: center;
       }
       .badge {
-        border: 1px solid rgba(15, 23, 42, 0.1);
-        background: rgba(249, 250, 251, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
         padding: 0.35rem 0.55rem;
         border-radius: 999px;
         font-size: 0.85rem;
@@ -505,7 +512,7 @@
       .contact {
         border: 1px solid var(--line);
         border-radius: 26px;
-        background: #fff;
+        background: linear-gradient(180deg, rgba(14, 19, 28, 0.96), rgba(10, 14, 21, 0.98));
         box-shadow: var(--shadow);
         padding: 1.3rem;
       }
@@ -529,15 +536,15 @@
         width: 100%;
         padding: 0.9rem 0.95rem;
         border-radius: 14px;
-        border: 1px solid rgba(15, 23, 42, 0.12);
-        background: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(8, 12, 18, 0.9);
         color: var(--ink);
         outline: none;
       }
       input:focus,
       textarea:focus {
-        border-color: rgba(14, 165, 164, 0.6);
-        box-shadow: 0 0 0 4px rgba(14, 165, 164, 0.12);
+        border-color: rgba(31, 168, 255, 0.6);
+        box-shadow: 0 0 0 4px rgba(31, 168, 255, 0.15);
       }
       textarea {
         grid-column: 1 / -1;
@@ -632,6 +639,10 @@
         form {
           grid-template-columns: 1fr;
         }
+        .logoImg {
+          height: 54px;
+          max-width: 220px;
+        }
         .navlinks {
           display: none;
         }
@@ -649,8 +660,12 @@
     <header class="nav">
       <div class="container navwrap">
         <a class="brand" href="#top" aria-label="Ir al inicio">
-          <span class="logo" aria-hidden="true"></span>
-          <span>Ballesteros Smart Solutions <span style="color:var(--muted)">S.A.S</span></span>
+          <img
+            class="logoImg"
+            src="logo-empresa-crop.png"
+            alt="Ballesteros Smart Solutions S.A.S"
+            loading="lazy"
+          />
         </a>
 
         <nav class="navlinks" aria-label="Navegación principal">
@@ -1079,7 +1094,12 @@
     <footer>
       <div class="container footgrid">
         <div class="brand">
-          <span class="logo" aria-hidden="true"></span>
+          <img
+            class="logoImg"
+            src="logo-empresa-crop.png"
+            alt="Ballesteros Smart Solutions S.A.S"
+            loading="lazy"
+          />
           <div>
             <div style="font-weight:800;color:var(--ink)">Ballesteros Smart Solutions S.A.S</div>
             <div class="small">Soluciones tecnológicas para empresas • Jamundí / Cali • Colombia</div>
