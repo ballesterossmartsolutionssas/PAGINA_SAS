@@ -621,11 +621,25 @@
       }
 
       @media (max-width: 980px) {
+        .navwrap {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.9rem;
+        }
         .herogrid {
           grid-template-columns: 1fr;
         }
+        .hero {
+          padding: 4.2rem 0 3rem;
+        }
+        .display {
+          font-size: clamp(2rem, 7vw, 2.8rem);
+        }
         .heroHighlights {
           grid-template-columns: 1fr;
+        }
+        .kpis {
+          grid-template-columns: 1fr 1fr;
         }
         .grid3 {
           grid-template-columns: 1fr;
@@ -636,15 +650,73 @@
         .impactRow {
           grid-template-columns: 1fr 1fr;
         }
+        .contactRow {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .navcta {
+          width: 100%;
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .navcta .btn {
+          width: 100%;
+          justify-content: center;
+        }
         form {
           grid-template-columns: 1fr;
         }
         .logoImg {
-          height: 54px;
-          max-width: 220px;
+          height: 60px;
+          max-width: 240px;
         }
         .navlinks {
           display: none;
+        }
+      }
+      @media (max-width: 700px) {
+        body {
+          font-size: 15.5px;
+        }
+        .pill {
+          font-size: 0.85rem;
+        }
+        .sub {
+          font-size: 1rem;
+          line-height: 1.65;
+        }
+        .sectionHead h2 {
+          font-size: 1.7rem;
+        }
+        .card h3 {
+          font-size: 1.05rem;
+        }
+        .card p {
+          font-size: 0.98rem;
+        }
+        .highlight {
+          padding: 0.85rem;
+        }
+        .logoImg {
+          height: 58px;
+          max-width: 240px;
+        }
+        .ctaRow {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .ctaRow .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .kpis {
+          grid-template-columns: 1fr;
+        }
+        .impactRow {
+          grid-template-columns: 1fr;
+        }
+        .heroCard {
+          margin-top: 1.4rem;
         }
       }
     </style>
